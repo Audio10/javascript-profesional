@@ -22,38 +22,7 @@
       <button>Play/Pause</button>
     </main>
 
-    <script>
-    // Define la funcion como un Objeto y recibe un objeto como config {}
-      function MediaPlayer(config) {
-        this.media = config.el;
-      }
-
-      // Cuando tomamos una function como clase, los metodos deben ser agregados al prototype
-      MediaPlayer.prototype.play = function() {
-        this.media.play();
-      };
-
-      MediaPlayer.prototype.pause = function() {
-        this.media.pause();
-      };
-
-      MediaPlayer.prototype.togglePlay = function() {
-        if (this.media.paused) {
-          this.play();
-        } else {
-          this.pause();
-        }
-      };
-
-      const video = document.querySelector('video');
-
-      // Construye el MediaPlayer con el objeto que pasa el el como propiedad
-      const player = new MediaPlayer({ el: video });
-
-      const button = document.querySelector('button');
-
-      // Llama el metodo onclick con el togglePlay
-      button.onclick = () => player.togglePlay();
-    </script>
+    <!-- Declara que el archivo es un modulo -->
+    <script type="module" src="/assets/index.js"> </script>
   </body>
 </html>
