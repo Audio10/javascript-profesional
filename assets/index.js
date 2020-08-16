@@ -8,7 +8,7 @@ const video = document.querySelector('video')
 const player = new MediaPlayer({ el: video, plugins: [new AutoPlay()] })
 
 const button = document.querySelector('#reproduce')
-const muteButton = document.getElementById('#mute')
+const muteButton = document.getElementById('muteButton')
 
 // Llama el metodo onclick con el togglePlay
 button.onclick = () => player.togglePlay()
