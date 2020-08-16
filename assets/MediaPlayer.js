@@ -30,7 +30,11 @@ MediaPlayer.prototype.togglePlay = function () {
 };
 
 MediaPlayer.prototype.toggleMute = function () {
-  console.log('this is working'); 
+  if (this.media.muted) {
+    this.unmute()
+  } else {
+    this.mute();
+  }
 };
 
 MediaPlayer.prototype.mute = function () {
