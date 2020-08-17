@@ -63,3 +63,12 @@ No se puede asignar un valor a *this* directamente y este depende de en que scop
 
 
 
+## Los métodos call, apply y bind
+
+Estas funciones nos sirven para establecer el valor de *this*, es decir cambiar el contexto que se va usar cuando la función sea llamada.
+
+Las funciones **call, apply y bind** son parte del prototipo Function. Toda función usa este prototipo y por lo tanto tiene estas tres funciones.
+
+- **functionName.call()**. Ejecuta la función recibiendo como primer argumento el *this* y los siguientes son los argumentos que recibe la función que llamó a call.
+- **functionName.apply()**. Ejecuta la función recibiendo como primer argumento el *this* y como segundo un arreglo con los argumentos que recibe la función que llamó a apply.
+- **functionName.bind()**. Recibe como primer y único argumento el *this*. No ejecuta la función, sólo regresa otra función con el nuevo this integrado.
