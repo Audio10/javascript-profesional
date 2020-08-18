@@ -72,3 +72,13 @@ Las funciones **call, apply y bind** son parte del prototipo Function. Toda func
 - **functionName.call()**. Ejecuta la función recibiendo como primer argumento el *this* y los siguientes son los argumentos que recibe la función que llamó a call.
 - **functionName.apply()**. Ejecuta la función recibiendo como primer argumento el *this* y como segundo un arreglo con los argumentos que recibe la función que llamó a apply.
 - **functionName.bind()**. Recibe como primer y único argumento el *this*. No ejecuta la función, sólo regresa otra función con el nuevo this integrado.
+
+
+
+## Prototype
+
+En Javascript todo son objetos, no tenemos clases, no tenemos ese plano para crear objetos.
+
+Todos los objetos “heredan” de un prototipo que a su vez hereda de otro prototipo y así sucesivamente creando lo que se llama la **prototype chain**.
+
+La keyword *new* crea un nuevo objeto que “hereda” todas las propiedades del prototype de otro objeto. No confundir prototype con **proto** que es sólo una propiedad en cada instancía que apunta al prototipo del que hereda.
