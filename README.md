@@ -187,3 +187,6 @@ Estas propiedades al ser funciones pueden llevar una validación de por medio y 
 
 
 
+## Proxy
+
+El proxy sirve para interceptar la lectura de propiedades de un objeto (los *get*, y *set*) entre muchas otras funciones. Así, antes de que la llamada llegue al objeto podemos manipularla con una lógica que nosotros definamos.
