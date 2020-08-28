@@ -214,7 +214,7 @@ Con **fetch** tenemos algo llamado **AbortController** que nos permite enviar un
 
 
 
-# IntersectionObserver
+## IntersectionObserver
 
 Sirve para observar elementos y si cruzan un umbral que nosotros definimos nos lo va a notificar para tomar acción.
 
@@ -226,9 +226,53 @@ El umbral se define por el porcentaje que tiene intersección con el *viewport*,
 
 - threshold: marca el porciento esperado
 
-```
+**Configuracion de IntersectionObserver**
+
+```javascript
+// Un metodo que emite cuando es observado y un objeto de configuracion
 const observer = new IntersectionObserver(this.handleIntersection, {
-      threshold: this.threshold,
+	threshold: this.threshold,
 })
+
+// llama al metodo que observa y le envias que va a observar
+observer.observe(this.player.media)
+```
+
+**handleIntersection Function**
+
+```javascript
+// El metodo al ser ligado al observer, al llamar observe este envia una lista de entradas al metodo.
+handleIntersection(entries) {
+	const entry = entries[0]
+
+// determina si el evento esta llendo o no
+// ********************************* THIS! en este caso seria el objeto observer porque es quien esta llamando a la funcion!!   *********************************************
+	const isVisible = entry.intersectionRatio >= this.threshold
+
+	if (isVisible) {
+		this.player.play()
+	} else {
+		this.player.pause()
+	}
+}
+```
+
+
+
+## VisibilityChange
+
+El **visibilityChange** forma parte del API del DOM llamado **Page Visibility** y nos deja saber si el elemento es visible, pude ser usado para ejecutar una acción cuando cambiamos de pestaña. Así podemos ahorrar batería y mejorar la UX.
+
+```javascript
+document.addEventListener('visibilitychange', this.handleVisibilityChange)
+
+handleVisibilityChange() {
+	const isVisible = document.visibilityState === 'visible'
+  if (isVisible) {
+  	this.player.play()
+  } else {
+  	this.player.pause()
+  }
+}
 ```
 
