@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
-import MediaPlayer from './MediaPlayer.js'
-import AutoPlay from './plugins/AutoPlay.js'
-import AutoPause from './plugins/AutoPause.js'
+import MediaPlayer from './MediaPlayer'
+import AutoPlay from './plugins/AutoPlay'
+import AutoPause from './plugins/AutoPause'
 
 const video = document.querySelector('video')
 
@@ -11,10 +11,10 @@ const player = new MediaPlayer({
   plugins: [new AutoPlay(), new AutoPause()],
 })
 
-const button = document.querySelector('#reproduce')
+const button: HTMLElement = document.querySelector('#reproduce')
 button.onclick = () => player.togglePlay()
 
-const muteButton = document.getElementById('muteButton')
+const muteButton: HTMLElement = document.getElementById('muteButton')
 
 muteButton.onclick = () => {
   if (player.media.muted) {
